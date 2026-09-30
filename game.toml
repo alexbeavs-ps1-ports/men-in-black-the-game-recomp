@@ -6,7 +6,9 @@ name = "Men in Black: The Game"
 id = "SLES-01047"
 players = 1
 exe = "disc/SLES_010.47"
-disc = ""
+disc = "disc/Men in Black - The Game (Europe).cue"
+discs = ["disc/Men in Black - The Game (Europe).cue"]
+disc_serials = ["SLES-01047"]
 load_address = "0x80010000"
 entry_pc = "0x80016C4C"
 text_size = "0x000A7000"
@@ -15,8 +17,8 @@ stack_base = "0x801FFFF0"
 # Digests are for data Track 01 (first BINARY FILE / TRACK 01).
 [prepare_disc]
 out_dir = "disc"
-bin_name = "disc1.bin"
-cue_name = "disc1.cue"
+bin_name = "Men in Black - The Game (Europe).bin"
+cue_name = "Men in Black - The Game (Europe).cue"
 boot_exe = "SLES_010.47"
 known_sizes = [491271648]
 known_md5 = [
@@ -30,11 +32,13 @@ known_crc32 = [
 ]
 
 [recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
 seeds = "seeds/ghidra_funcs.txt"
 out_dir = "generated"
 strict = true
 
 [runtime]
+openbios = false
 window_title = "men-in-black-the-game- Recompiled"
 memcard_dir = "saves"
 
